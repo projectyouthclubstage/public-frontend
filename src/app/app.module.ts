@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -18,7 +19,7 @@ const config = new AuthServiceConfig([
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider('561602290896109')
+    provider: new FacebookLoginProvider('')
   }
 ]);
 
@@ -36,7 +37,8 @@ export function provideConfig() {
     BrowserModule,
     FormsModule,
     HttpModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule
   ],
   providers: [
     {
