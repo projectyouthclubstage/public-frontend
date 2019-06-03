@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SocialUser, AuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
-import { CentralAuthorisationService } from '../../services/backend/central-authorisation.service';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
 import { UserService } from '../../security/UserService';
-import { AuthGuard } from '../../security/AuthGuard';
+import { environment } from '../../environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +11,9 @@ import { AuthGuard } from '../../security/AuthGuard';
 })
 export class NavbarComponent implements OnInit {
   
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private cookieService: CookieService,
+              private translate: TranslateService) { }
 
   ngOnInit() {  }
 
@@ -34,6 +34,15 @@ export class NavbarComponent implements OnInit {
   signOut(): boolean {
     this.userService.signOut();
     return this.isLoggedIn();
+  }
+
+  setLanguage(language: string) {
+    this.cookieService.set(environment.cookieNameLanguage, language);
+    this.loadLanguage();
+  }
+
+  loadLanguage(): void {
+    this.translate.setDefaultLang(this.cookieService.get(environment.cookieNameLanguage));
   }
 
 }

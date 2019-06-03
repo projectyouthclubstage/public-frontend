@@ -6,5 +6,8 @@
 export const environment = {
   production: false,
 
+  cookieNameLanguage: "lang",
+  defaultLanguage: "en",
+
   centralAuthorisationService: "http://localhost:8080"
 };
