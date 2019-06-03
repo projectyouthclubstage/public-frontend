@@ -1,6 +1,19 @@
 {
     "app": {
-        "header": "This is my header",
-        "body": "And here is my body!"
+        "title": "Youth Club Stage",
+        "language": {
+            "en": "English",
+            "de": "German"
+        },
+        "home": {
+            "register": "Register",
+            "contact": "Contact",
+            "imprint": "Imprint"
+        },
+        "internal": {
+            "header": "Login successful!",
+            "message": "You should be redirected to the internal application. If not please",
+            "link": "click here"
+        }
     }
 }

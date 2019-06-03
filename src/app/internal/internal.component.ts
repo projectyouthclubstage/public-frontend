@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AuthService } from 'angularx-social-login';
-import { SocialUser } from 'angularx-social-login';
-import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
-import { CentralAuthorisationService } from '../../services/backend/central-authorisation.service';
-import { CookieService } from 'ngx-cookie-service';
-
+import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-internal',
@@ -14,10 +9,12 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class InternalComponent implements OnInit {
 
-  constructor() { }
+  internalFrontendUrl: string;
 
-  ngOnInit() {}
+  constructor() {
+    this.internalFrontendUrl = environment.internalFrontendUrl;
+  }
 
-  
+  ngOnInit() {  }
 
 }

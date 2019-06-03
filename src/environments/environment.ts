@@ -9,5 +9,7 @@ export const environment = {
   cookieNameLanguage: "lang",
   defaultLanguage: "en",
 
+  internalFrontendUrl: "hhtps://www.google.com",
+
   centralAuthorisationService: "http://localhost:8080"
 };

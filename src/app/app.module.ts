@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from '../security/AuthGuard';
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { PublicComponent } from './public/public.component';
+import { HomeComponent } from './home/home.component';
 import { InternalComponent } from './internal/internal.component';
 
 import { CookieService } from 'ngx-cookie-service';
@@ -22,7 +22,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { SocialLoginModule } from 'angularx-social-login';
 import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider  } from 'angularx-social-login';
 import { UserService } from '../security/UserService';
-import { LogoutComponent } from './public/logout/logout.component';
+import { LogoutComponent } from './home/logout/logout.component';
 
 
 const config = new AuthServiceConfig([
@@ -44,7 +44,7 @@ const appRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: PublicComponent,
+    component: HomeComponent,
   },{
     path: 'internal',
     component: InternalComponent,
@@ -59,7 +59,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    PublicComponent,
+    HomeComponent,
     InternalComponent,
     LogoutComponent
   ],
