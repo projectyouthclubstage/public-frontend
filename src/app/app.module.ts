@@ -11,7 +11,7 @@ import { AuthGuard } from '../security/AuthGuard';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { InternalComponent } from './internal/internal.component';
+import { LoginComponent } from './home/login/login.component';
 
 import { CookieService } from 'ngx-cookie-service';
 import { AlertModule } from 'ngx-bootstrap';  
@@ -23,6 +23,8 @@ import { SocialLoginModule } from 'angularx-social-login';
 import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider  } from 'angularx-social-login';
 import { UserService } from '../security/UserService';
 import { LogoutComponent } from './home/logout/logout.component';
+import { ImprintComponent } from './home/imprint/imprint.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const config = new AuthServiceConfig([
@@ -46,12 +48,14 @@ const appRoutes: Routes = [
     pathMatch: 'full',
     component: HomeComponent,
   },{
-    path: 'internal',
-    component: InternalComponent,
-    canActivate: [AuthGuard]
+    path: 'login',
+    component: LoginComponent
   },{
     path: 'logout',
     component: LogoutComponent
+  },{
+    path: 'imprint',
+    component: ImprintComponent
   }
 ]
 
@@ -59,9 +63,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
+    FooterComponent,
     HomeComponent,
-    InternalComponent,
-    LogoutComponent
+    LoginComponent,
+    LogoutComponent,
+    ImprintComponent
   ],
   imports: [
     BrowserModule,

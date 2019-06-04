@@ -1,19 +1,50 @@
 {
-    "app": {
-        "title": "Youth Club Stage",
-        "language": {
-            "en": "Englisch",
-            "de": "Deutsch"
-        },
-        "home": {
-            "register": "Registrierung",
-            "contact": "Kontakt",
-            "imprint": "Impressum"
-        },
-        "internal": {
-            "header": "Anmeldung erfolgreich!",
-            "message": "Sie sollten zur internen Anwendung weitergeleitet werden. Ist das nicht der Fall, bitte",
-            "link": "hier manuell weiterleiten"
-        }
-    }
+	"app": {		
+		"title": "Youth Club Stage",
+		"name": "Öffentlich",
+		
+		"language": {
+			"de": "Deutsch",
+			"en": "Englisch"
+		},
+		
+		"navbar": {
+			"login": "Anmelden",
+			"logout": "Abmelden"
+		},
+
+		"home": {
+			"contact": "Kontakt",
+			"register": "Registrierung",
+
+			"imprint": {
+				"header": "Impressum",
+				"mail": "E-Mail",
+				"phone": "Telefon"
+			},
+
+			"login": {
+				"description": "Bitte wählen Sie ihren Provider:",
+				"facebook": "Facebook",
+				"google": "Google",
+				"header": "Anmeldung",
+				"success": {
+					"header": "Anmeldung erfolgreich!",
+					"description": "Sie sollten zur internen Anwendung weitergeleitet werden. Ist das nicht der Fall, bitte",
+					"link": "hier manuell weiterleiten"
+				}
+			},
+
+			"logout": {
+				"failure": {
+					"header": "Abmeldung fehlgeschlagen!",
+					"description": "Bitte schließen Sie ihren Browser und entfernen sie die Cookies um sicherzustellen, dass Sie abgemeldet sind."
+				},
+				"success": {
+					"header": "Abmeldung erfolgreich!",
+					"description": "Sie sollten zur öffentlichen Anwendung weitergeleitet werden. Ist das nicht der Fall, wählen schließen sie bitte ihren Browser."
+				}
+			}
+		}
+	}
 }

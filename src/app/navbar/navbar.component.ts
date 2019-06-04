@@ -3,6 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { UserService } from '../../security/UserService';
 import { environment } from '../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,37 +13,25 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit {
   
   constructor(private userService: UserService,
-              private cookieService: CookieService,
-              private translate: TranslateService) { }
+              private router: Router) { }
 
   ngOnInit() {  }
+  
+  signOut(): void {
+    this.userService.signOut();
+    this.router.navigate(['logout']);
+  }
+
+  signIn(): void {
+    this.router.navigate(['login']);
+  }
 
   isLoggedIn(): boolean {
     return this.userService.isLoggedIn();
   }
 
-  signInGoogle(): boolean {
-    this.userService.signInGoogle();
-    return this.isLoggedIn();
-  }
-
-  signInFacebook(): boolean {
-    this.userService.signInFacebook();
-    return this.isLoggedIn();
-  }
-  
-  signOut(): boolean {
-    this.userService.signOut();
-    return this.isLoggedIn();
-  }
-
-  setLanguage(language: string) {
-    this.cookieService.set(environment.cookieNameLanguage, language);
-    this.loadLanguage();
-  }
-
-  loadLanguage(): void {
-    this.translate.setDefaultLang(this.cookieService.get(environment.cookieNameLanguage));
+  goHome(): void {
+    this.router.navigate(['']);
   }
 
 }

@@ -1,0 +1,27 @@
+<div *ngIf="!isLoggedIn()" class="text-center page">
+
+  <!-- Login needed or failed -->
+
+  <h2 translate>app.home.login.header</h2>
+  <h6 translate>app.home.login.description</h6><br>
+
+  <div class="row">
+    <a class="col-xs card hover bg-secondary" (click)="logginWithFacebook()">
+      <h2 class="square" translate>app.home.login.facebook</h2>
+    </a>
+    <a class="col-xs card hover bg-secondary" (click)="logginWithGoogle()">
+      <h2 class="square" translate>app.home.login.google</h2>
+    </a>
+  </div>
+
+</div>
+
+
+<div *ngIf="isLoggedIn()" class="text-center page">
+
+  <!-- Login successful -->
+
+  <h2 translate>app.home.login.success.header</h2>
+  <span translate>app.home.login.success.description </span> <a href="https://www.google.com" translate>app.home.login.success.link</a>.
+
+</div>

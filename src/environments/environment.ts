@@ -6,6 +6,7 @@
 export const environment = {
   production: false,
 
+  cookieNameToken: "token",
   cookieNameLanguage: "lang",
   defaultLanguage: "en",
 

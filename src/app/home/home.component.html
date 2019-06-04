@@ -1,15 +1,13 @@
-<div class="jumbotron bg-transparent text-center">
-  <div class="container">
-    <div class="row">
-      <a class="col-xs card bg-secondary">
-        <h2 class="square" translate>app.home.register</h2>
-      </a>
-      <a class="col-xs card bg-secondary">
-        <h2 class="square" translate>app.home.contact</h2>
-      </a>
-      <a class="col-xs card bg-secondary">
-        <h2 class="square" translate>app.home.imprint</h2>
-      </a>
-    </div>
-  </div>  
+<div class="text-center page">
+  <div class="row">
+    <a class="col-xs card hover bg-secondary">
+      <h2 class="square" translate>app.home.register</h2>
+    </a>
+    <a class="col-xs card hover bg-secondary" (click)="goToContact()">
+      <h2 class="square" translate>app.home.contact</h2>
+    </a>
+    <a class="col-xs card hover bg-secondary" (click)="goToImprint()">
+      <h2 class="square" translate>app.home.imprint.header</h2>
+    </a>
+  </div>
 </div>

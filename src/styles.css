@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+.page {
+    padding-top: 1%
+}
+
+.card {
+    width: 20rem;
+    margin: auto;
+}
+
+.hover {
+    cursor: pointer
+}
+  
+.square {
+    width: 100%;
+    padding-top: 40%;
+    padding-bottom: 40%;
+    background-size: cover;
+    background-position: center;
+}
+  

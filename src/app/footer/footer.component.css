@@ -1,13 +1,8 @@
 .flags {
     border-radius: 8px;
-    width: 50%;
-    cursor: pointer
-}
-
-.logins {
-    border-radius: 8px;
-    width: 30%;
-    cursor: pointer
+    width: 100%;
+    cursor: pointer;
+    align-content: center
 }
 
 .vertical-center {

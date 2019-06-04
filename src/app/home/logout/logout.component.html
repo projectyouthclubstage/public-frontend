@@ -1,1 +1,18 @@
-Erfolgreich abgemeldet
+<div *ngIf="!isLoggedIn()" class="text-center page">
+
+    <!-- Logout successful -->
+
+    <h2 translate>app.home.logout.success.header</h2>
+    <span translate>app.home.logout.success.description</span>
+
+</div>
+
+<div *ngIf="isLoggedIn()" class="text-center page">
+
+        <!-- Logout failed -->
+    
+        <h2 translate>app.home.logout.failure.header</h2>
+        <span translate>app.home.logout.failure.description</span>
+    
+    </div>
+      

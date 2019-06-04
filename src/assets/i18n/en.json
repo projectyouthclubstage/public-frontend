@@ -1,19 +1,50 @@
 {
-    "app": {
-        "title": "Youth Club Stage",
-        "language": {
-            "en": "English",
-            "de": "German"
-        },
-        "home": {
-            "register": "Register",
-            "contact": "Contact",
-            "imprint": "Imprint"
-        },
-        "internal": {
-            "header": "Login successful!",
-            "message": "You should be redirected to the internal application. If not please",
-            "link": "click here"
-        }
-    }
+	"app": {		
+		"title": "Youth Club Stage",
+		"name": "Public",
+		
+		"language": {
+			"de": "German",
+			"en": "English"
+		},
+		
+		"navbar": {
+			"login": "Sign in",
+			"logout": "Sign out"
+		},
+
+		"home": {
+			"contact": "Contact",
+			"register": "Register",
+
+			"imprint": {
+				"header": "Imprint",
+				"mail": "mail",
+				"phone": "phone"
+			},
+
+			"login": {
+				"description": "Please select your provider:",
+				"facebook": "Facebook",
+				"google": "Google",
+				"header": "Sign in",
+				"success": {
+					"header": "Sign in successful!",
+					"description": "You should be redirected to the internal application. If not please",
+					"link": "click here"
+				}
+			},
+
+			"logout": {
+				"failure": {
+					"header": "Sign out failed!",
+					"description": "Please close your browser and delete all cookies to ensure the sign out."
+				},
+				"success": {
+					"header": "Sign out successful!",
+					"description": "You should be redirected to the public application. If not please close your browser."
+				}
+			}
+		}
+	}
 }
