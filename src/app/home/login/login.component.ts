@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit {
   }
   
   logginWithGoogle(): boolean {
-    //this.userService.signInGoogle();
-    //return this.isLoggedIn();
-    return this.actLikeLoggedIn();
+    this.userService.signInGoogle();
+    return this.isLoggedIn();
+    //return this.actLikeLoggedIn();
   }
   
   logginWithFacebook(): boolean {

@@ -20,24 +20,43 @@ export class UserService  {
     }
 
     public signInGoogle(): void {
-        this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-        this.callBackend();
+        this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
+            .then(
+                user => {
+                    this.callBackend(user);
+                })
+            .catch(
+                reason => {
+                    console.log("Login with google failed! - " + reason);
+                }
+            );
     }
 
     public signInFacebook(): void {
-        this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-        this.callBackend();
+        this.authService.signIn(FacebookLoginProvider.PROVIDER_ID)
+        .then(
+            user => {
+                this.callBackend(user);
+            })
+        .catch(
+            reason => {
+                console.log("Login with facebook failed! - " + reason);
+            }
+        );
     }
 
     public actLikeLoggedIn(): void {        
         this.cookieService.set(environment.cookieNameToken, "fakeIt");
     }
 
-    private callBackend(): void {
-        this.authorisationService.getUserForExternalAuth(this.user.provider, this.user.idToken).subscribe(
-        data => {
-            this.cookieService.set(environment.cookieNameToken, this.user.idToken);
-        });
+    private callBackend(user: SocialUser): void {
+        console.log("Provider: " + user.provider);
+        console.log("IdToken: " + user.idToken);
+        //this.authorisationService.getUserForExternalAuth(this.user.provider, this.user.idToken).subscribe(
+        //data => {
+        //    this.cookieService.set(environment.cookieNameToken, this.user.idToken);
+        //});
+        this.actLikeLoggedIn();
     }
     
     public signOut(): void {
